@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://quicktoolshub.com"),
+  metadataBase: new URL("https://freeonlinetools-my.netlify.app"),
   title: {
     default: "QuickToolsHub - Free Online Tools",
     template: "%s | QuickToolsHub",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "QuickToolsHub - Free Online Tools",
     description:
       "Fast, free utilities for daily tasks. No signup required.",
-    url: "https://quicktoolshub.com",
+    url: "https://freeonlinetools-my.netlify.app",
     siteName: "QuickToolsHub",
     type: "website",
   },
@@ -58,9 +58,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-950 text-slate-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AnalyticsScripts />
         <SiteHeader />

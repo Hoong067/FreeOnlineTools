@@ -44,6 +44,14 @@ export default function Home() {
       <footer className="border-t border-slate-800 pt-6 text-xs text-slate-400">
         <p>© {new Date().getFullYear()} QuickToolsHub</p>
         <p className="mt-1">All tools run in your browser. No signup required.</p>
+        <div className="mt-3 flex gap-4">
+          <Link href="/privacy" className="underline decoration-slate-600 underline-offset-2">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="underline decoration-slate-600 underline-offset-2">
+            Terms and Conditions
+          </Link>
+        </div>
       </footer>
     </div>
   );
@@ -64,6 +72,9 @@ function ToolGroup({ title, items }: { title: string; items: (typeof tools)[numb
             href={`/${tool.slug}`}
             className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 transition hover:border-indigo-500/60 hover:bg-slate-900"
           >
+            <p className="mb-2 text-xl" aria-hidden="true">
+              {tool.icon}
+            </p>
             <h3 className="text-base font-semibold text-white">{tool.name}</h3>
             <p className="mt-1 text-sm text-slate-300">{tool.description}</p>
           </Link>

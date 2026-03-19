@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
   return (
@@ -7,7 +10,10 @@ export function SiteHeader() {
         <Link href="/" className="text-lg font-semibold tracking-tight text-white">
           QuickToolsHub
         </Link>
-        <p className="text-xs text-slate-400">Free • Fast • No signup</p>
+        <div className="flex items-center gap-3">
+          <p className="hidden text-xs text-slate-400 sm:block">Free • Fast • No signup</p>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

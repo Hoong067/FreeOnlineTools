@@ -15,7 +15,8 @@ declare global {
 }
 
 export function AdSlot({ slot, label = "Advertisement", className }: AdSlotProps) {
-  const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const adClient =
+    process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-8039489457416276";
 
   useEffect(() => {
     if (!adClient) {
@@ -28,18 +29,8 @@ export function AdSlot({ slot, label = "Advertisement", className }: AdSlotProps
     }
   }, [adClient]);
 
-  if (!adClient) {
-    return (
-      <div
-        className={`rounded-xl border border-dashed border-slate-700 bg-slate-900/60 p-4 text-center text-xs text-slate-400 ${className ?? ""}`}
-      >
-        {label} Slot • Set `NEXT_PUBLIC_ADSENSE_CLIENT` + slot IDs to activate
-      </div>
-    );
-  }
-
   return (
-    <div className={className}>
+    <div className={className} aria-label={label}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}

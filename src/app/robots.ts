@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://quicktoolshub.com/sitemap.xml",
-    host: "https://quicktoolshub.com",
+    sitemap: "https://freeonlinetools-my.netlify.app/sitemap.xml",
+    host: "https://freeonlinetools-my.netlify.app",
   };
 }

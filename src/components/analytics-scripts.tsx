@@ -2,7 +2,8 @@ import Script from "next/script";
 
 export function AnalyticsScripts() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const adClient =
+    process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-8039489457416276";
 
   return (
     <>

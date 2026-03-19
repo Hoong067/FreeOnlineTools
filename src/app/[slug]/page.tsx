@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${tool.name} | QuickToolsHub`,
       description: tool.description,
-      url: `https://quicktoolshub.com/${tool.slug}`,
+      url: `https://freeonlinetools-my.netlify.app/${tool.slug}`,
       siteName: "QuickToolsHub",
       type: "website",
     },
@@ -55,7 +55,7 @@ export default async function ToolPage({ params }: PageProps) {
           ← Back to all tools
         </Link>
       </div>
-      <ToolPageShell title={tool.name} description={tool.description}>
+      <ToolPageShell title={tool.name} description={tool.description} icon={tool.icon}>
         <ToolRenderer slug={tool.slug} />
       </ToolPageShell>
     </>

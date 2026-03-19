@@ -4,6 +4,7 @@ import { AdSlot } from "@/components/ad-slot";
 type ToolPageShellProps = {
   title: string;
   description: string;
+  icon?: string;
   headerAdSlot?: string;
   bodyAdSlot?: string;
   footerAdSlot?: string;
@@ -13,6 +14,7 @@ type ToolPageShellProps = {
 export function ToolPageShell({
   title,
   description,
+  icon,
   headerAdSlot = "1111111111",
   bodyAdSlot = "2222222222",
   footerAdSlot = "3333333333",
@@ -21,6 +23,11 @@ export function ToolPageShell({
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
       <div className="mb-6">
+        {icon ? (
+          <p className="mb-2 text-3xl" aria-hidden="true">
+            {icon}
+          </p>
+        ) : null}
         <h1 className="text-3xl font-semibold text-white sm:text-4xl">{title}</h1>
         <p className="mt-2 text-sm text-slate-300 sm:text-base">{description}</p>
       </div>
